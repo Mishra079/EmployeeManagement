@@ -5,7 +5,7 @@ A production-quality full-stack Employee Management System built with **Spring B
 ## Tech Stack
 
 ### Backend
-- Java 21, Spring Boot 3.2.5, Spring Web, Spring Data JPA
+- Java 17, Spring Boot 3.2.5, Spring Web, Spring Data JPA
 - MySQL, Lombok, Spring Validation, ModelMapper
 - Layered Architecture with DTO pattern
 
@@ -52,7 +52,7 @@ employee-management-system-backend/
 
 ## Prerequisites
 
-- **JDK 21** (or latest LTS)
+- **JDK 17** (or latest LTS)
 - **Maven 3.8+**
 - **MySQL 8.0+**
 - **Node.js 18+** and npm
