@@ -1,6 +1,6 @@
 # Employee Management System
 
-A production-quality full-stack Employee Management System built with **Spring Boot 3.2** (Java 21) and **React 18**.
+A production-quality full-stack Employee Management System built with **Spring Boot 3.2** (Java 17) and **React 18**.
 
 ## Tech Stack
 
@@ -52,7 +52,7 @@ employee-management-system-backend/
 
 ## Prerequisites
 
-- **JDK 17** (or latest LTS)
+- **JDK 17** 
 - **Maven 3.8+**
 - **MySQL 8.0+**
 - **Node.js 18+** and npm
@@ -82,7 +82,7 @@ spring.datasource.password=your_password
 mvn spring-boot:run
 ```
 
-API runs at: `http://localhost:8080`
+API runs at: `http://localhost:8686`
 
 ### 3. Run Frontend
 
