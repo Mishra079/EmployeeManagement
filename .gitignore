@@ -1,0 +1,30 @@
+# Compiled / build output
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Node (frontend)
+frontend/node_modules/
+frontend/dist/
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar

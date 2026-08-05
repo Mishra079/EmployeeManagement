@@ -1,0 +1,170 @@
+{
+  "info": {
+    "name": "Employee Management System API",
+    "description": "Complete REST API collection for Employee Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8686"
+    }
+  ],
+  "item": [
+    {
+      "name": "Departments",
+      "item": [
+        {
+          "name": "Create Department",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Engineering\",\n  \"description\": \"Software engineering department\"\n}"
+            },
+            "url": "{{baseUrl}}/api/departments"
+          }
+        },
+        {
+          "name": "Get All Departments",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/departments"
+          }
+        },
+        {
+          "name": "Get Department By Id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/departments/1"
+          }
+        },
+        {
+          "name": "Update Department",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Engineering\",\n  \"description\": \"Updated description\"\n}"
+            },
+            "url": "{{baseUrl}}/api/departments/1"
+          }
+        },
+        {
+          "name": "Delete Department",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/departments/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employeeCode\": \"EMP-006\",\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Brown\",\n  \"email\": \"alice.brown@company.com\",\n  \"phone\": \"9876543215\",\n  \"gender\": \"FEMALE\",\n  \"dateOfBirth\": \"1993-04-12\",\n  \"departmentId\": 1,\n  \"designation\": \"Junior Developer\",\n  \"salary\": 45000,\n  \"joiningDate\": \"2023-01-15\",\n  \"address\": \"100 Dev Street\",\n  \"city\": \"Pune\",\n  \"state\": \"Maharashtra\",\n  \"country\": \"India\",\n  \"zipCode\": \"411001\",\n  \"status\": \"ACTIVE\",\n  \"profileImage\": \"https://ui-avatars.com/api/?name=Alice+Brown\"\n}"
+            },
+            "url": "{{baseUrl}}/api/employees"
+          }
+        },
+        {
+          "name": "Get All Employees (Paginated)",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/employees?page=0&size=10&sortBy=firstName&direction=asc",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "employees"],
+              "query": [
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" },
+                { "key": "sortBy", "value": "firstName" },
+                { "key": "direction", "value": "asc" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Employee By Id",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/employees/1"
+          }
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"employeeCode\": \"EMP-001\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@company.com\",\n  \"phone\": \"9876543210\",\n  \"gender\": \"MALE\",\n  \"dateOfBirth\": \"1990-05-15\",\n  \"departmentId\": 1,\n  \"designation\": \"Lead Software Engineer\",\n  \"salary\": 95000,\n  \"joiningDate\": \"2020-01-10\",\n  \"address\": \"123 Tech Park\",\n  \"city\": \"Bangalore\",\n  \"state\": \"Karnataka\",\n  \"country\": \"India\",\n  \"zipCode\": \"560001\",\n  \"status\": \"ACTIVE\"\n}"
+            },
+            "url": "{{baseUrl}}/api/employees/1"
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/employees/1"
+          }
+        },
+        {
+          "name": "Search Employees",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/employees/search?keyword=john&page=0&size=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "employees", "search"],
+              "query": [
+                { "key": "keyword", "value": "john" },
+                { "key": "page", "value": "0" },
+                { "key": "size", "value": "10" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Filter Employees",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/api/employees/filter?department=IT&status=ACTIVE&minSalary=50000&maxSalary=100000",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "employees", "filter"],
+              "query": [
+                { "key": "department", "value": "IT" },
+                { "key": "status", "value": "ACTIVE" },
+                { "key": "minSalary", "value": "50000" },
+                { "key": "maxSalary", "value": "100000" }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Get Dashboard Stats",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/dashboard/stats"
+          }
+        }
+      ]
+    }
+  ]
+}
